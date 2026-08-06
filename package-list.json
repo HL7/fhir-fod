@@ -1,0 +1,13 @@
+{
+ "package-id" : "hl7.fhir.uv.fod",
+ "title" : "Fact of Death Exchange", 
+ "canonical" : "http://hl7.org/fhir/uv/fhir-fod", 
+ "introduction" : "The introduction that should appear in the FHIR IG registry",
+ "list" : [{
+  "version" : "current",
+  "desc" : "Continuous Integration Build (latest in version control)",
+  "path" : "https://build.fhir.org/ig/HL7/fhir-fod/",
+  "status" : "ci-build",
+  "current" : true
+ }]
+}
