@@ -8,7 +8,7 @@ test comment for display
 <Observation xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="example"/>
   <meta>
-    <profile value="http://somewhere.org/fhir/uv/myig/StructureDefinition/myObservation"/>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/myObservation"/>
   </meta>
   <status value="final"/>
   <subject>
@@ -16,17 +16,17 @@ test comment for display
   </subject>
   <code>
     <coding>
-      <system value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
       <code value="01"/>
       <display value="CS1"/>
     </coding>
     <coding>
-      <system value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
       <code value="01"/>
       <display value="CS2"/>
     </coding>
     <coding>
-      <system value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
       <code value="01"/>
       <display value="VS1"/>
     </coding>
@@ -35,7 +35,7 @@ test comment for display
       <code value="85354-9"/>
     </coding>
     <coding>
-      <system value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
       <code value="01"/>
       <display value="VS2"/>
     </coding>

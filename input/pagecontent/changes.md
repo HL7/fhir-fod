@@ -1,4 +1,4 @@
-This provides a list of changes to the MyIG specification since its initial release
+This provides a list of changes to the Fact of Death specification since its initial release
 
 <a name="0.1.0"> </a>
 

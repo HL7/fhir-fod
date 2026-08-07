@@ -13,7 +13,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status-reason">
     <valueMarkdown value="Why this resource is informative"/>
   </extension>
-  <url value="http://somewhere.org/fhir/uv/myig/StructureDefinition/myObservation"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/myObservation"/>
   <identifier>
     <type>
       <coding>
@@ -287,7 +287,7 @@
       </patternCodeableConcept>
       <binding>
         <strength value="required"/>
-        <valueSet value="http://somewhere.org/fhir/uv/myig/ValueSet/valueset-fake"/>
+        <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/valueset-fake"/>
       </binding>
     </element>
     <element id="Observation.subject">

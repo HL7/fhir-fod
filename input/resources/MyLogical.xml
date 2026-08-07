@@ -4,7 +4,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-namespace">
     <valueUri value="http://example.org/logical"/>
   </extension>
-  <url value="http://somewhere.org/fhir/uv/myig/StructureDefinition/MyLogical"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/MyLogical"/>
   <name value="MyLogical"/>
   <title value="My Logical Model"/>
   <status value="draft"/>
@@ -12,7 +12,7 @@
   <fhirVersion value="4.0.0"/>
   <kind value="logical"/>
   <abstract value="false"/>
-  <type value="http://somewhere.org/fhir/uv/myig/StructureDefinition/MyLogical"/>
+  <type value="http://somewhere.org/fhir/us/fod/StructureDefinition/MyLogical"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Element"/>
   <derivation value="specialization"/>
   <differential>

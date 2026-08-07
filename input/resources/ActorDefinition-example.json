@@ -5,7 +5,7 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-actor-example-url",
     "valueUrl" : "http://somewhere.else.org/pas/server"
   }],
-  "url" : "http://somewhere.org/fhir/uv/myig/ActorDefinition/example",
+  "url" : "http://somewhere.org/fhir/us/fod/ActorDefinition/example",
   "name" : "ExampleServer",
   "title" : "Example Server",
   "status" : "active",

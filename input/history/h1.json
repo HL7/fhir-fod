@@ -4,7 +4,7 @@
   "type" : "collection",
   "entry" : [
     {
-      "fullUrl" : "http://somewhere.org/fhir/uv/myig/Provenance/h1-1",
+      "fullUrl" : "http://somewhere.org/fhir/us/fod/Provenance/h1-1",
       "resource" : {
         "resourceType" : "Provenance",
         "id" : "h1-1",

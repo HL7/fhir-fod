@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="valueset-fake"/>
-  <url value="http://somewhere.org/fhir/uv/myig/ValueSet/valueset-fake"/>
+  <url value="http://somewhere.org/fhir/us/fod/ValueSet/valueset-fake"/>
   <name value="ValueSetFake"/>
   <title value="ValueSet fake"/>
   <status value="draft"/>
@@ -10,7 +10,7 @@
   <description value="A fake value"/>
   <compose>
     <include>
-      <system value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
       <concept>
         <code value="01"/>
         <display value="VS1"/>

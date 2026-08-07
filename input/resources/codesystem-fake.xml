@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="cs-fake"/>
-  <url value="http://somewhere.org/fhir/uv/myig/CodeSystem/cs-fake"/>
+  <url value="http://somewhere.org/fhir/us/fod/CodeSystem/cs-fake"/>
   <name value="CodeSystemFake"/>
   <title value="CodeSystem fake"/>
   <status value="draft"/>

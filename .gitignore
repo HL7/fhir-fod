@@ -28,3 +28,5 @@ input-cache/schemas/
 translations/
 .index.db
 .index.json
+
+.claude

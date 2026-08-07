@@ -1,7 +1,7 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "url" : "http://somewhere.org/fhir/uv/myig/Requirements/fromNarrative",
+  "url" : "http://somewhere.org/fhir/us/fod/Requirements/fromNarrative",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",

@@ -1,7 +1,7 @@
 {
   "resourceType" : "Library",
   "id": "example",
-  "url" : "http://somewhere.org/fhir/uv/myig/Library/example",
+  "url" : "http://somewhere.org/fhir/us/fod/Library/example",
   "version" : "1.0.0",
   "name": "Example",
   "title": "Example CQL Library",

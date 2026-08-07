@@ -1,7 +1,7 @@
 {
   "resourceType" : "Questionnaire",
   "id" : "example",
-  "url" : "http://somewhere.org/fhir/uv/myig/Questionnaire/example",
+  "url" : "http://somewhere.org/fhir/us/fod/Questionnaire/example",
   "title": "Cancer Quality Forum Questionnaire 2012",
   "status": "draft",
   "subjectType": [

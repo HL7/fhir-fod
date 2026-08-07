@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Library xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <url value="http://somewhere.org/fhir/uv/myig/Library/example-image"/>
+  <url value="http://somewhere.org/fhir/us/fod/Library/example-image"/>
   <version value="1.0.0"/>
   <name value="ExampleLibraryImage"/>
   <title value="Example Library Image"/>
