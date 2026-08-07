@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-provenance"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+  <name value="FODProvenance"/>
+  <title value="Fact of Death Provenance"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="Provenance for the asserted fact of death: when the death was registered, when the notification content was assembled, and which jurisdiction authored it. This is what lets a receiver order a correction after the notification it corrects, and decide whether a later notification from a different source supersedes an earlier one."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Provenance"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Provenance"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Provenance.target">
+      <path value="Provenance.target"/>
+      <short value="The fact of death being attributed, that is the Death Date observation"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.occurred[x]">
+      <path value="Provenance.occurred[x]"/>
+      <short value="When the death was registered by the jurisdiction"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.recorded">
+      <path value="Provenance.recorded"/>
+      <short value="When this notification content was assembled"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.agent">
+      <path value="Provenance.agent"/>
+      <slicing>
+        <discriminator>
+          <type value="pattern"/>
+          <path value="type"/>
+        </discriminator>
+        <description value="Sliced so that the authoring jurisdiction is always identifiable, while leaving room for additional agents such as a relaying intermediary."/>
+        <rules value="open"/>
+      </slicing>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.agent:author">
+      <path value="Provenance.agent"/>
+      <sliceName value="author"/>
+      <short value="The jurisdiction that registered the death and authored the notification"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.agent:author.type">
+      <path value="Provenance.agent.type"/>
+      <min value="1"/>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+          <code value="author"/>
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Provenance.agent:author.who">
+      <path value="Provenance.agent.who"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

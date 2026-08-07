@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-match-outcome-vs"/>
+  <url value="http://somewhere.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
+  <name value="FODMatchOutcomeVS"/>
+  <title value="Fact of Death Match Outcome Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="The set of outcomes a receiving system may report for a fact-of-death notification."/>
+  <compose>
+    <include>
+      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
+    </include>
+  </compose>
+</ValueSet>

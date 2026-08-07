@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A death at home discovered some time after it occurred, so only the month and year are known.
+     This decedent has no Social Security Number on the record; the matching invariant is met
+     through birth date plus address instead. -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-notification-home-partial-date-example"/>
+  <meta>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+  </meta>
+  <identifier>
+    <extension url="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber">
+      <valueString value="002911"/>
+    </extension>
+    <system value="http://vitalrecords.example.gov/fod-notification"/>
+    <value value="IL-FOD-2026-0002911"/>
+  </identifier>
+  <type value="message"/>
+  <timestamp value="2026-08-06T16:40:00-05:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:a0b1c2d3-e4f5-4607-8819-2a3b4c5d6e7f"/>
+    <resource>
+      <MessageHeader>
+        <id value="IL-FOD-2026-0002911"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+        </meta>
+        <eventCoding>
+          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <code value="fact-of-death-notification"/>
+        </eventCoding>
+        <destination>
+          <name value="Prairie Family Medicine"/>
+          <endpoint value="https://ehr.example.org/fhir/$process-message"/>
+        </destination>
+        <sender>
+          <reference value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+          <display value="Illinois Department of Public Health, Division of Vital Records"/>
+        </sender>
+        <source>
+          <name value="Illinois Vital Records Notification Service"/>
+          <endpoint value="https://vitalrecords.example.gov/fod"/>
+        </source>
+        <focus>
+          <reference value="urn:uuid:c2d3e4f5-0617-4829-9a3b-4c5d6e7f8091"/>
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:b1c2d3e4-f506-4718-892a-3b4c5d6e7f80"/>
+    <resource>
+      <Patient>
+        <id value="fod-decedent-home-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+        </meta>
+        <identifier>
+          <system value="http://vitalrecords.example.gov/death-record-id"/>
+          <value value="IL-DR-2026-0002911"/>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="Okonjo"/>
+          <given value="Daniel"/>
+        </name>
+        <gender value="male"/>
+        <birthDate value="1957-11-02"/>
+        <deceasedBoolean value="true"/>
+        <address>
+          <line value="77 Larkspur Lane"/>
+          <city value="Decatur"/>
+          <district value="Macon"/>
+          <state value="IL"/>
+          <postalCode value="62521"/>
+          <country value="US"/>
+        </address>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:c2d3e4f5-0617-4829-9a3b-4c5d6e7f8091"/>
+    <resource>
+      <Observation>
+        <id value="fod-death-date-home-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+        </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/event-location">
+          <valueReference>
+            <reference value="urn:uuid:d3e4f506-1728-493a-ab4c-5d6e7f809102"/>
+          </valueReference>
+        </extension>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="81956-5"/>
+            <display value="Date+time of death"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:b1c2d3e4-f506-4718-892a-3b4c5d6e7f80"/>
+        </subject>
+        <!-- The day and time of death are not known. The dateTime carries the precision that is
+             known, and the VRCL partial date/time extension states explicitly why the rest is absent. -->
+        <valueDateTime value="2026-06">
+          <extension url="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/Extension-partial-date-time-vr">
+            <extension url="year">
+              <valueUnsignedInt value="2026"/>
+            </extension>
+            <extension url="month">
+              <valueUnsignedInt value="6"/>
+            </extension>
+            <extension url="day">
+              <valueUnsignedInt>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="unknown"/>
+                </extension>
+              </valueUnsignedInt>
+            </extension>
+            <extension url="time">
+              <valueTime>
+                <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+                  <valueCode value="unknown"/>
+                </extension>
+              </valueTime>
+            </extension>
+          </extension>
+        </valueDateTime>
+        <method>
+          <coding>
+            <system value="http://hl7.org/fhir/us/vrdr/CodeSystem/vrdr-date-of-death-determination-methods-cs"/>
+            <code value="approximate"/>
+            <display value="Approximate"/>
+          </coding>
+        </method>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="58332-8"/>
+              <display value="Location of death"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="440081000124100"/>
+              <display value="Death in home"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:d3e4f506-1728-493a-ab4c-5d6e7f809102"/>
+    <resource>
+      <Location>
+        <id value="fod-death-location-home-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+        </meta>
+        <name value="Decedent's residence"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/us/vrdr/CodeSystem/vrdr-location-type-cs"/>
+            <code value="death"/>
+          </coding>
+        </type>
+        <!-- Generalized to city, county, and state rather than the full street address. -->
+        <address>
+          <city value="Decatur"/>
+          <district value="Macon"/>
+          <state value="IL"/>
+          <country value="US"/>
+        </address>
+      </Location>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+    <resource>
+      <Organization>
+        <id value="fod-source-organization-home-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+        </meta>
+        <identifier>
+          <system value="http://vitalrecords.example.gov/jurisdiction-id"/>
+          <value value="IL"/>
+        </identifier>
+        <active value="true"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/organization-type"/>
+            <code value="govt"/>
+            <display value="Government"/>
+          </coding>
+        </type>
+        <name value="Illinois Department of Public Health, Division of Vital Records"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="217-555-0100"/>
+        </telecom>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:e4f50617-2839-4a4b-bc5d-6e7f80910213"/>
+    <resource>
+      <Provenance>
+        <id value="fod-provenance-home-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+        </meta>
+        <target>
+          <reference value="urn:uuid:c2d3e4f5-0617-4829-9a3b-4c5d6e7f8091"/>
+        </target>
+        <occurredDateTime value="2026-08-04"/>
+        <recorded value="2026-08-06T16:40:00-05:00"/>
+        <agent>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+              <code value="author"/>
+            </coding>
+          </type>
+          <who>
+            <reference value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+          </who>
+        </agent>
+      </Provenance>
+    </resource>
+  </entry>
+</Bundle>

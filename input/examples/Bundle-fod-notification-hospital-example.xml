@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The happy path: a death registered in a hospital, with full demographics and an exact date and time of death. -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-notification-hospital-example"/>
+  <meta>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+  </meta>
+  <identifier>
+    <extension url="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber">
+      <valueString value="000184"/>
+    </extension>
+    <system value="http://vitalrecords.example.gov/fod-notification"/>
+    <value value="IL-FOD-2026-0000184"/>
+  </identifier>
+  <type value="message"/>
+  <timestamp value="2026-08-05T09:12:00-05:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:0f1e2d3c-4b5a-6978-8796-a5b4c3d2e1f0"/>
+    <resource>
+      <MessageHeader>
+        <id value="IL-FOD-2026-0000184"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+        </meta>
+        <eventCoding>
+          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <code value="fact-of-death-notification"/>
+        </eventCoding>
+        <destination>
+          <name value="Example Health System"/>
+          <endpoint value="https://ehr.example.org/fhir/$process-message"/>
+          <receiver>
+            <display value="Example Health System"/>
+          </receiver>
+        </destination>
+        <sender>
+          <reference value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+          <display value="Illinois Department of Public Health, Division of Vital Records"/>
+        </sender>
+        <source>
+          <name value="Illinois Vital Records Notification Service"/>
+          <endpoint value="https://vitalrecords.example.gov/fod"/>
+        </source>
+        <focus>
+          <reference value="urn:uuid:2b3c4d5e-6f70-4812-9345-6a7b8c9d0e1f"/>
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:1a2b3c4d-5e6f-4708-9192-a3b4c5d6e7f8"/>
+    <resource>
+      <Patient>
+        <id value="fod-decedent-hospital-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+        </meta>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="SS"/>
+            </coding>
+          </type>
+          <system value="http://hl7.org/fhir/sid/us-ssn"/>
+          <value value="999451234"/>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <family value="Nakamura"/>
+          <given value="Alice"/>
+          <given value="Rose"/>
+        </name>
+        <name>
+          <use value="maiden"/>
+          <family value="Whitfield"/>
+          <given value="Alice"/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="217-555-0142"/>
+          <use value="home"/>
+        </telecom>
+        <gender value="female"/>
+        <birthDate value="1949-03-11"/>
+        <deceasedBoolean value="true"/>
+        <address>
+          <line value="1428 Elm Street"/>
+          <city value="Springfield"/>
+          <district value="Sangamon"/>
+          <state value="IL"/>
+          <postalCode value="62704"/>
+          <country value="US"/>
+        </address>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:2b3c4d5e-6f70-4812-9345-6a7b8c9d0e1f"/>
+    <resource>
+      <Observation>
+        <id value="fod-death-date-hospital-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+        </meta>
+        <extension url="http://hl7.org/fhir/StructureDefinition/event-location">
+          <valueReference>
+            <reference value="urn:uuid:3c4d5e6f-7081-4923-a456-7b8c9d0e1f20"/>
+          </valueReference>
+        </extension>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="81956-5"/>
+            <display value="Date+time of death"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:1a2b3c4d-5e6f-4708-9192-a3b4c5d6e7f8"/>
+        </subject>
+        <valueDateTime value="2026-07-29T14:22:00-05:00"/>
+        <method>
+          <coding>
+            <system value="http://hl7.org/fhir/us/vrdr/CodeSystem/vrdr-date-of-death-determination-methods-cs"/>
+            <code value="exact"/>
+            <display value="Exact"/>
+          </coding>
+        </method>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="80616-6"/>
+              <display value="Date and time pronounced dead [US Standard Certificate of Death]"/>
+            </coding>
+          </code>
+          <valueDateTime value="2026-07-29T14:35:00-05:00"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="58332-8"/>
+              <display value="Location of death"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="16983000"/>
+              <display value="Death in hospital"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:3c4d5e6f-7081-4923-a456-7b8c9d0e1f20"/>
+    <resource>
+      <Location>
+        <id value="fod-death-location-hospital-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+        </meta>
+        <name value="Springfield General Hospital"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/us/vrdr/CodeSystem/vrdr-location-type-cs"/>
+            <code value="death"/>
+          </coding>
+        </type>
+        <address>
+          <line value="800 North Rutledge Street"/>
+          <city value="Springfield"/>
+          <district value="Sangamon"/>
+          <state value="IL"/>
+          <postalCode value="62702"/>
+          <country value="US"/>
+        </address>
+      </Location>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+    <resource>
+      <Organization>
+        <id value="fod-source-organization-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+        </meta>
+        <identifier>
+          <system value="http://vitalrecords.example.gov/jurisdiction-id"/>
+          <value value="IL"/>
+        </identifier>
+        <active value="true"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/organization-type"/>
+            <code value="govt"/>
+            <display value="Government"/>
+          </coding>
+        </type>
+        <name value="Illinois Department of Public Health, Division of Vital Records"/>
+        <telecom>
+          <system value="phone"/>
+          <value value="217-555-0100"/>
+        </telecom>
+        <address>
+          <line value="925 East Ridgely Avenue"/>
+          <city value="Springfield"/>
+          <state value="IL"/>
+          <postalCode value="62702"/>
+          <country value="US"/>
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:4e5f6071-8293-4a45-b567-8c9d0e1f2031"/>
+    <resource>
+      <Provenance>
+        <id value="fod-provenance-hospital-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+        </meta>
+        <target>
+          <reference value="urn:uuid:2b3c4d5e-6f70-4812-9345-6a7b8c9d0e1f"/>
+        </target>
+        <occurredDateTime value="2026-08-03"/>
+        <recorded value="2026-08-05T09:12:00-05:00"/>
+        <agent>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+              <code value="author"/>
+            </coding>
+          </type>
+          <who>
+            <reference value="urn:uuid:5d4c3b2a-1908-4716-8524-3f2e1d0c9b8a"/>
+          </who>
+        </agent>
+      </Provenance>
+    </resource>
+  </entry>
+</Bundle>

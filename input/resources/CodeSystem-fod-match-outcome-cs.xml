@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-match-outcome-cs"/>
+  <url value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
+  <name value="FODMatchOutcomeCS"/>
+  <title value="Fact of Death Match Outcome Codes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="Codes a receiving system returns to report whether a fact-of-death notification could be matched to a patient record. These codes describe the outcome of the receiver's own matching process; this guide does not specify the matching algorithm itself."/>
+  <caseSensitive value="true"/>
+  <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="matched"/>
+    <display value="Matched"/>
+    <definition value="The notification was matched to exactly one patient record and has been processed."/>
+  </concept>
+  <concept>
+    <code value="no-match"/>
+    <display value="No Match"/>
+    <definition value="No patient record matched the demographics in the notification. The receiver took no action on any patient record."/>
+  </concept>
+  <concept>
+    <code value="multiple-candidates"/>
+    <display value="Multiple Candidates"/>
+    <definition value="More than one patient record matched the demographics in the notification and the receiver could not safely select one. No patient record was updated."/>
+  </concept>
+  <concept>
+    <code value="pending-manual-review"/>
+    <display value="Pending Manual Review"/>
+    <definition value="The notification was accepted but routed to a human reviewer rather than being applied automatically. A further response may or may not follow."/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-acknowledgement-bundle"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
+  <name value="FODAcknowledgementBundle"/>
+  <title value="Fact of Death Acknowledgement Bundle"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="A message returned by a receiving system to report what became of a fact-of-death notification. Support for acknowledgement is optional for receivers, but a jurisdiction has no other way to learn whether its notifications are reaching a patient record. The acknowledgement deliberately carries no decedent content: it identifies the notification by its bundle identifier and reports only the match outcome."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Bundle"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Bundle.identifier">
+      <path value="Bundle.identifier"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type"/>
+      <fixedCode value="message"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.timestamp">
+      <path value="Bundle.timestamp"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry"/>
+      <slicing>
+        <discriminator>
+          <type value="profile"/>
+          <path value="resource"/>
+        </discriminator>
+        <description value="Slicing based on the profile of the contained resource"/>
+        <rules value="open"/>
+      </slicing>
+      <min value="2"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.fullUrl">
+      <path value="Bundle.entry.fullUrl"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.resource">
+      <path value="Bundle.entry.resource"/>
+      <min value="1"/>
+    </element>
+    <element id="Bundle.entry:MessageHeader">
+      <path value="Bundle.entry"/>
+      <sliceName value="MessageHeader"/>
+      <short value="The acknowledgement header, which SHALL be the first entry"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:MessageHeader.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="MessageHeader"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:MatchOutcome">
+      <path value="Bundle.entry"/>
+      <sliceName value="MatchOutcome"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:MatchOutcome.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="OperationOutcome"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

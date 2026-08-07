@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-death-date"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+  <name value="FODDeathDate"/>
+  <title value="Fact of Death Death Date"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="The fact of death and the date and time it occurred, together with the coded place of death and a reference to the death location. This profile derives from the VRDR Death Date observation and tightens it for notification use: a value is always present, and the coded place of death is always present even when no Location resource is sent. This observation is the authoritative carrier of the date and time of death within a notification. A void notification conveys this observation with status 'entered-in-error'."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Observation"/>
+  <baseDefinition value="http://hl7.org/fhir/us/vrdr/StructureDefinition/vrdr-death-date"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Observation.extension">
+      <path value="Observation.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element id="Observation.extension:deathLocation">
+      <path value="Observation.extension"/>
+      <sliceName value="deathLocation"/>
+      <short value="Explicit link to the place where the death occurred"/>
+      <definition value="A reference to the Fact of Death Death Location resource carried in the same notification bundle. Senders that convey a Death Location SHALL also populate this reference, so that receivers do not have to infer the linkage from bundle membership."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/event-location"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.extension:deathLocation.value[x]">
+      <path value="Observation.extension.value[x]"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+      </type>
+    </element>
+    <element id="Observation.status">
+      <path value="Observation.status"/>
+      <short value="final for an initial notification or a correction; entered-in-error for a void"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]"/>
+      <short value="The date and time of death, or the period within which death is known to have occurred"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.value[x]:valueDateTime">
+      <path value="Observation.value[x]"/>
+      <sliceName value="valueDateTime"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.method">
+      <path value="Observation.method"/>
+      <short value="How the date of death was established: exact, approximate, or court appointed"/>
+      <mustSupport value="true"/>
+    </element>
+    <!-- Slice order must follow the order declared in vrdr-death-date. -->
+    <element id="Observation.component:datetimePronouncedDead">
+      <path value="Observation.component"/>
+      <sliceName value="datetimePronouncedDead"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Observation.component:placeOfDeath">
+      <path value="Observation.component"/>
+      <sliceName value="placeOfDeath"/>
+      <short value="Coded place of death, required even when no Death Location resource is sent"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

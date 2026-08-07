@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-notification-bundle"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+  <name value="FODNotificationBundle"/>
+  <title value="Fact of Death Notification Bundle"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="A fact-of-death notification, carried as a FHIR message. The bundle conveys the identity of the decedent, the fact and date and time of death, the place of death, and the demographics a receiver needs to match the notification to a patient record. Its content slices deliberately mirror the VRDR Mortality Roster Bundle so that a jurisdiction already producing roster content can reuse the same resource instances. Causes of death, manner of death, and the other content of a death certificate are out of scope for a notification and are not carried here."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Bundle"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle"/>
+      <constraint>
+        <key value="fod-bundle-identified"/>
+        <severity value="error"/>
+        <human value="A notification SHALL have a bundle identifier with both a system and a value, so that a later correction or retraction can unambiguously reference it."/>
+        <expression value="identifier.system.exists() and identifier.value.exists()"/>
+        <source value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+      </constraint>
+    </element>
+    <element id="Bundle.identifier">
+      <path value="Bundle.identifier"/>
+      <short value="Business identifier of this notification, used by corrections and retractions to reference it"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.identifier.extension">
+      <path value="Bundle.identifier.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element id="Bundle.identifier.extension:certificateNumber">
+      <path value="Bundle.identifier.extension"/>
+      <sliceName value="certificateNumber"/>
+      <short value="Death certificate number assigned by the jurisdiction"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.identifier.extension:auxiliaryStateIdentifier1">
+      <path value="Bundle.identifier.extension"/>
+      <sliceName value="auxiliaryStateIdentifier1"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/AuxiliaryStateIdentifier1"/>
+      </type>
+    </element>
+    <element id="Bundle.identifier.extension:auxiliaryStateIdentifier2">
+      <path value="Bundle.identifier.extension"/>
+      <sliceName value="auxiliaryStateIdentifier2"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/AuxiliaryStateIdentifier2"/>
+      </type>
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type"/>
+      <fixedCode value="message"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.timestamp">
+      <path value="Bundle.timestamp"/>
+      <short value="When this notification was assembled for sending"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry"/>
+      <slicing>
+        <discriminator>
+          <type value="profile"/>
+          <path value="resource"/>
+        </discriminator>
+        <description value="Slicing based on the profile of the contained resource"/>
+        <rules value="open"/>
+      </slicing>
+      <!-- Must equal the sum of the required slice minimums below. -->
+      <min value="5"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.fullUrl">
+      <path value="Bundle.entry.fullUrl"/>
+      <short value="Required so that references between entries in the message resolve"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry.resource">
+      <path value="Bundle.entry.resource"/>
+      <min value="1"/>
+    </element>
+    <element id="Bundle.entry:MessageHeader">
+      <path value="Bundle.entry"/>
+      <sliceName value="MessageHeader"/>
+      <short value="The message header, which SHALL be the first entry"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:MessageHeader.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="MessageHeader"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:Decedent">
+      <path value="Bundle.entry"/>
+      <sliceName value="Decedent"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:Decedent.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Patient"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:DeathDate">
+      <path value="Bundle.entry"/>
+      <sliceName value="DeathDate"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:DeathDate.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Observation"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:DeathLocation">
+      <path value="Bundle.entry"/>
+      <sliceName value="DeathLocation"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:DeathLocation.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Location"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:SourceOrganization">
+      <path value="Bundle.entry"/>
+      <sliceName value="SourceOrganization"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:SourceOrganization.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Organization"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:Provenance">
+      <path value="Bundle.entry"/>
+      <sliceName value="Provenance"/>
+      <short value="Registration and authorship of the fact of death, which a receiver needs in order to sequence corrections correctly"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:Provenance.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Provenance"/>
+        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+      </type>
+    </element>
+    <element id="Bundle.entry:Certifier">
+      <path value="Bundle.entry"/>
+      <sliceName value="Certifier"/>
+      <short value="The practitioner who certified or pronounced the death, where the jurisdiction discloses it"/>
+      <min value="0"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Bundle.entry:Certifier.resource">
+      <path value="Bundle.entry.resource"/>
+      <type>
+        <code value="Practitioner"/>
+        <profile value="http://hl7.org/fhir/us/vrdr/StructureDefinition/vrdr-certifier"/>
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,13 @@
+{
+  "resourceType" : "ActorDefinition",
+  "id" : "fod-notification-intermediary",
+  "url" : "http://somewhere.org/fhir/us/fod/ActorDefinition/fod-notification-intermediary",
+  "name" : "FODNotificationIntermediary",
+  "title" : "Notification Intermediary",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-08-07",
+  "publisher" : "HL7 International - Public Health Work Group",
+  "description" : "A system such as a health information exchange or a national routing service that relays fact-of-death notifications from a Death Record Source to one or more Notification Receivers. An intermediary routes on the message header alone and does not need to inspect or alter the decedent content; when it relays a notification it becomes the MessageHeader.sender while the originating jurisdiction remains the Provenance author.",
+  "type" : "system"
+}

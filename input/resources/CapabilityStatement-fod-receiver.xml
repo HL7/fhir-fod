@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-receiver"/>
+  <url value="http://somewhere.org/fhir/us/fod/CapabilityStatement/fod-receiver"/>
+  <name value="FODReceiver"/>
+  <title value="Fact of Death Receiver Capability Statement"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="Expectations of a Notification Receiver, typically an EHR, that accepts fact-of-death notifications. A receiver SHALL accept all three message events. Accepting a retraction is not optional: a receiver that can accept a death but not withdraw it cannot be corrected when a jurisdiction registers a death against the wrong individual."/>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="json"/>
+  <format value="xml"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="Notifications are delivered by invoking $process-message at the server root with a Fact of Death Notification Bundle as the message. A receiver that supports acknowledgement returns a Fact of Death Acknowledgement Bundle synchronously in the operation response."/>
+    <operation>
+      <name value="process-message"/>
+      <definition value="http://hl7.org/fhir/OperationDefinition/MessageHeader-process-message"/>
+    </operation>
+  </rest>
+  <messaging>
+    <documentation value="A receiver matches each notification to a patient record using its own matching logic. Where it supports acknowledgement, it reports the outcome using the Fact of Death Match Outcome, including the case where no patient record matched."/>
+    <supportedMessage>
+      <mode value="receiver"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-notification"/>
+    </supportedMessage>
+    <supportedMessage>
+      <mode value="receiver"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-correction"/>
+    </supportedMessage>
+    <supportedMessage>
+      <mode value="receiver"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-void"/>
+    </supportedMessage>
+  </messaging>
+</CapabilityStatement>

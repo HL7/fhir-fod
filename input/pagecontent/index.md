@@ -13,16 +13,14 @@ Many electronic exchanges including this one do necessitate the need to ensure a
 The main sections of this IG are:
 {: #walkthrough}
 
-- [Background](background.html) - provides business context for the implementation guide and information that implementers should be
-  familiar with before reading the remainder of the IG.  There could be multiple pages for this.
-- [Detailed Specification](spec.html) - The actual stuff implementers are expected to do.  (Could be multiple pages for this.)
-- [Downloads](downloads.html) - Allows downloading a copy of this implementation guide and other useful information
-
-Sample showing changed content
-{: .modified-content}
-
-Sample showing new content
-{: .new-content}
+- [Background](background.html) - business context implementers should be familiar with before reading
+  the remainder of the IG.
+- [Detailed Specification](spec.html) - the actors, message events, notification content, and
+  conformance expectations implementers are expected to implement.
+- [Artifact Index](artifacts.html) - the profiles, terminology, message definitions, and examples
+  defined by this guide.
+- [Downloads](downloads.html) - a downloadable copy of this implementation guide and other useful
+  information.
 
 ### Authors
 

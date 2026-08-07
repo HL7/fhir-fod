@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Expansion parameters used by the IG publisher when expanding value sets.
+     Referenced from myig.xml via the path-expansion-params parameter.
+
+     This guide is US realm and reuses the VRDR place-of-death value set, four of whose six SNOMED
+     codes are US Extension concepts (home, hospice, nursing home, and emergency department or
+     outpatient department). Those codes do not exist in the SNOMED International Edition, so the
+     edition has to be pinned to the US Edition module for them to validate. -->
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="expansion-params"/>
+  <parameter>
+    <name value="system-version"/>
+    <valueUri value="http://snomed.info/sct|http://snomed.info/sct/731000124108"/>
+  </parameter>
+</Parameters>

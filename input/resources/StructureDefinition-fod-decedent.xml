@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-decedent"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+  <name value="FODDecedent"/>
+  <title value="Fact of Death Decedent"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="The decedent whose death is being notified, carrying the demographics a receiving system needs in order to match the notification to an existing patient record. This profile derives from the VRDR Decedent (and therefore from VRCL Patient and US Core Patient) and adds must-support obligations on the elements that carry matching value. It does not define a matching algorithm; how a receiver matches, and what identity assurance it requires of the sender, are out of scope for this guide."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Patient"/>
+  <baseDefinition value="http://hl7.org/fhir/us/vrdr/StructureDefinition/vrdr-decedent"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Patient">
+      <path value="Patient"/>
+      <constraint>
+        <key value="fod-decedent-matchable"/>
+        <severity value="error"/>
+        <human value="A decedent SHALL carry either a Social Security Number, or a birth date together with an address or a telecom, so that a receiving system has enough demographic breadth to match safely."/>
+        <expression value="identifier.where(type.coding.where(system = 'http://terminology.hl7.org/CodeSystem/v2-0203' and code = 'SS').exists()).exists() or (birthDate.exists() and (address.exists() or telecom.exists()))"/>
+        <source value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+      </constraint>
+    </element>
+    <element id="Patient.extension:NVSS-SexAtDeath">
+      <path value="Patient.extension"/>
+      <sliceName value="NVSS-SexAtDeath"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier"/>
+      <short value="Identifiers for the decedent, including the SSN and any medical record number known to the sender"/>
+      <mustSupport value="true"/>
+    </element>
+    <!-- Slice order must follow the order declared in VRCL Patient-vr, which is MRN before SSN. -->
+    <element id="Patient.identifier:MRN">
+      <path value="Patient.identifier"/>
+      <sliceName value="MRN"/>
+      <short value="Medical record number, if the sender happens to hold one for the receiving system"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.identifier:SSN">
+      <path value="Patient.identifier"/>
+      <sliceName value="SSN"/>
+      <short value="Social Security Number, the single highest-value matching element when available"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.name:currentLegalName">
+      <path value="Patient.name"/>
+      <sliceName value="currentLegalName"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.name:namePriorToFirstMarriage">
+      <path value="Patient.name"/>
+      <sliceName value="namePriorToFirstMarriage"/>
+      <short value="Maiden name, which materially improves matching for decedents whose name changed after their record was created"/>
+      <mustSupport value="true"/>
+    </element>
+    <!-- Element order must follow the base Patient resource, where telecom precedes gender. -->
+    <element id="Patient.telecom">
+      <path value="Patient.telecom"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.birthDate">
+      <path value="Patient.birthDate"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.deceased[x]:deceasedBoolean">
+      <path value="Patient.deceased[x]"/>
+      <sliceName value="deceasedBoolean"/>
+      <short value="SHALL be true. The date and time of death are carried by the Fact of Death Death Date observation, which is the authoritative source for them."/>
+      <!-- vrdr-decedent already pins this slice to true with patternBoolean; restating it as
+           fixedBoolean here would violate eld-8 (pattern and fixed are mutually exclusive). -->
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address"/>
+      <short value="Residence address of the decedent, used for matching"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

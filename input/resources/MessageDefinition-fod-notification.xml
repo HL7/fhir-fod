@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-notification"/>
+  <url value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-notification"/>
+  <name value="FODNotificationMessage"/>
+  <title value="Fact of Death Notification Message"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="An initial notification that a registered death event has occurred. A receiver that supports acknowledgement returns a Fact of Death Acknowledgement Bundle carrying the same event code and referencing this notification through MessageHeader.response.identifier. Acknowledgement is optional, so no response is mandated here."/>
+  <eventCoding>
+    <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+    <code value="fact-of-death-notification"/>
+  </eventCoding>
+  <category value="notification"/>
+  <focus>
+    <code value="Observation"/>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+    <min value="1"/>
+    <max value="1"/>
+  </focus>
+  <focus>
+    <code value="Patient"/>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+    <min value="1"/>
+    <max value="1"/>
+  </focus>
+</MessageDefinition>

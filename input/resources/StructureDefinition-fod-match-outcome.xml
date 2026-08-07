@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-match-outcome"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+  <name value="FODMatchOutcome"/>
+  <title value="Fact of Death Match Outcome"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="The outcome a receiving system reports for a fact-of-death notification: whether it matched a patient record, found none, found several, or deferred the decision to a human. This is the feedback that lets a jurisdiction tell whether its notifications are actually landing, without disclosing anything about the matched patient."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="OperationOutcome"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="OperationOutcome.issue">
+      <path value="OperationOutcome.issue"/>
+      <short value="Exactly one issue, carrying the match outcome"/>
+      <min value="1"/>
+      <max value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="OperationOutcome.issue.severity">
+      <path value="OperationOutcome.issue.severity"/>
+      <short value="information for a successful match, warning where the notification could not be applied"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="OperationOutcome.issue.code">
+      <path value="OperationOutcome.issue.code"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="OperationOutcome.issue.details">
+      <path value="OperationOutcome.issue.details"/>
+      <short value="The match outcome"/>
+      <min value="1"/>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
+      </binding>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -8,9 +8,6 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/> 
   </extension>
-<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
-    <valueString value="resources-spreadsheet.xml"/>
-  </extension>-->
   <url value="http://somewhere.org/fhir/us/fod/ImplementationGuide/example.fhir.us.fod"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.2.0"/>
@@ -26,13 +23,15 @@
       <value value="http://hl7.org/Special/committees/pher"/>
     </telecom>
   </contact>
-  <description value="A brief description of what MyIG is about (probably the same text as in your readme)"/>
+  <description value="Guidance on sending fact-of-death notifications to providers and other clinical systems using FHIR, so that a registered death event can be communicated back to the providers who cared for the decedent. Complements the Vital Records Death Reporting (VRDR) and Vital Records Common Library (VRCL) implementation guides."/>
   <jurisdiction>
-    <!-- This first repetition will drive SNOMED release used -->
+    <!-- This first repetition will drive SNOMED release used, and it must be the m49 coding for the
+         publisher to select an edition from it. US is required here rather than universal: the VRDR
+         place-of-death value set draws on SNOMED US Extension codes such as 440081000124100 (Death
+         in home), which do not exist in the International Edition. -->
     <coding>
-      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-      <!-- This is the code for universal -->
-      <code value="001"/>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
     </coding>
   </jurisdiction>
   <packageId value="example.fhir.us.fod"/>
@@ -45,6 +44,18 @@
     <packageId value="fhir.cqf.common"/>
     <version value="4.0.1"/>
   </dependsOn>
+  <!-- Decedent demographics and the shared vital records extensions/value sets are reused from VRCL -->
+  <dependsOn id="vrcl">
+    <uri value="http://hl7.org/fhir/us/vr-common-library/ImplementationGuide/hl7.fhir.us.vr-common-library"/>
+    <packageId value="hl7.fhir.us.vr-common-library"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  <!-- Death event profiles (death date, death location) are reused from VRDR -->
+  <dependsOn id="vrdr">
+    <uri value="http://hl7.org/fhir/us/vrdr/ImplementationGuide/hl7.fhir.us.vrdr"/>
+    <packageId value="hl7.fhir.us.vrdr"/>
+    <version value="3.0.0"/>
+  </dependsOn>
 <!--  <dependsOn>
     <uri value="https://simplifier.net/packages/de.medizininformatikinitiative.kerndatensatz.fall/0.9.1/files/131317"/>
     <packageId value="de.medizininformatikinitiative.kerndatensatz.fall"/>
@@ -54,94 +65,38 @@
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
     <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
+        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
+      </extension>
       <reference>
-        <reference value="StructureDefinition/mypatient"/>
+        <reference value="Bundle/fod-notification-hospital-example"/>
       </reference>
-      <description value="Overriding description because we can"/>
+      <name value="Notification - hospital inpatient death"/>
+      <description value="A death registered in a hospital, with full matching demographics and an exact date and time of death."/>
+      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MyLogical"/>
-      </reference>
-      <description value="Logical Model"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Library/example-sql"/>
-      </reference>
-      <description value="A test example"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Library/example-image"/>
-      </reference>
-      <description value="A test image example"/>
-    </resource>
-<!--<resource>
-<reference>
-<reference value="MyLogicalModel/AS"/>
-</reference>
-</resource> -->
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
-        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/example"/>
+        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
       </extension>
       <reference>
-        <reference value="Patient/example"/>
+        <reference value="Bundle/fod-notification-home-partial-date-example"/>
       </reference>
-      <name value="Simple patient example"/>
-      <description value="A simple example showing how examples are defined and referenced"/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/mypatient"/>
+      <name value="Notification - death at home, partial date"/>
+      <description value="A death at home where only the month and year are known, and where the decedent has no Social Security Number on the record."/>
+      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
     </resource>
     <resource>
-      <reference>
-        <reference value="Observation/example"/>
-      </reference>
-      <name value="Observation patient example"/>
-      <description value="Example showing slicing"/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/myObservation"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Binary/example"/>
-      </reference>
-      <name value="Example binary"/>
-      <description value="Example showing binary content"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-resource-format">
-        <valueCode value="application/xml"/>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
+        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-notification-receiver"/>
       </extension>
       <reference>
-        <reference value="Binary/logical-example"/>
+        <reference value="Bundle/fod-acknowledgement-nomatch-example"/>
       </reference>
-      <name value="Example of Logical Model"/>
-      <description value="Example showing example content for a logical model"/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/MyLogical"/>
-    </resource>    
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-resource-format">
-        <valueCode value="image/jpeg"/>
-      </extension>
-      <reference>
-        <reference value="Binary/image-example"/>
-      </reference>
-      <name value="Example of Binary Image"/>
-      <description value="Example showing example content for an image"/>
-    </resource>    
-    <resource>
-      <reference>
-        <reference value="ValueSet/valueset-no-codesystem"/>
-      </reference>
-      <name value="Value set for no code system"/>
+      <name value="Acknowledgement - no match found"/>
+      <description value="A receiver reporting that a notification arrived cleanly but matched no patient record."/>
+      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
     </resource>
-<!--    <resource>
-      <reference>
-        <reference value="Library/example"/>
-      </reference>
-      <name value="Simple library example"/>
-      <description value="A simple example showing how library is pre-loaded"/>
-    </resource> -->
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <nameUrl value="toc.html"/>
@@ -159,11 +114,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="trial-use"/> 
-        </extension> 
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-          <valueInteger value="3"/> 
+          <valueCode value="trial-use"/>
         </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+          <valueInteger value="3"/>
+        </extension>
+        <nameUrl value="spec.html"/>
+        <title value="Detailed Specification"/>
+        <generation value="markdown"/>
       </page>
       <page>
         <nameUrl value="downloads.html"/>
@@ -189,14 +147,6 @@
     <parameter>
       <code value="find-other-resources"/>
       <value value="true"/>
-    </parameter>
-    <parameter>
-      <code value="path-resource"/>
-      <value value="input\history"/>
-    </parameter>
-    <parameter>
-      <code value="path-binary"/>
-      <value value="input\cql"/>
     </parameter>
     <parameter>
       <code value="path-liquid"/>
@@ -227,37 +177,13 @@
       <code value="generate-uml"/>
       <value value="source"/>
     </parameter>
+    <!-- Expansion parameters pin SNOMED CT to the US Edition module. The VRDR place-of-death value
+         set draws on US Extension codes such as 440081000124100 (Death in home), which do not exist
+         in the International Edition that the terminology server otherwise defaults to. -->
     <parameter>
-      <code value="path-pages"/>
-      <value value="input/diagrams"/>
-    </parameter>
-    <parameter>
-      <code value="showsource"/>
-      <value value="true"/>
-    </parameter>
-    <parameter>
-      <code value="i18n-default-lang"/>
-      <value value="en"/>
-    </parameter>
-    <parameter>
-      <code value="i18n-lang"/>
-      <value value="de"/>
-    </parameter>
-    <parameter>
-      <code value="i18n-lang"/>
-      <value value="fr"/>
-    </parameter>
-    <parameter>
-      <code value="translation-sources"/>
-      <value value="input/translations-de"/>
-    </parameter>
-    <parameter>
-      <code value="translation-sources"/>
-      <value value="input/translations-fr"/>
-    </parameter>
-    <parameter>
-      <code value="fcp-approved-specification"/>
-      <value value="false"/>
+      <code value="path-expansion-params"/>
+      <!-- Resolved relative to the directory holding this file, so no input/ prefix. -->
+      <value value="expansion-params.xml"/>
     </parameter>
     <parameter>
       <code value="toggle-changes"/>

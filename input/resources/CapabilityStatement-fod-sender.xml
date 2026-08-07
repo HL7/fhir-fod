@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-sender"/>
+  <url value="http://somewhere.org/fhir/us/fod/CapabilityStatement/fod-sender"/>
+  <name value="FODSender"/>
+  <title value="Fact of Death Sender Capability Statement"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="Expectations of a Death Record Source, or of an intermediary relaying on its behalf, that sends fact-of-death notifications. A sender SHALL be able to send an initial notification. Support for corrections and retractions is strongly encouraged: a jurisdiction that can only ever assert a death, and never revise or withdraw that assertion, leaves receivers unable to repair a record they wrongly marked as deceased."/>
+  <kind value="requirements"/>
+  <fhirVersion value="4.0.1"/>
+  <format value="json"/>
+  <format value="xml"/>
+  <messaging>
+    <documentation value="Notifications are sent as FHIR messages conforming to the Fact of Death Notification Bundle. Where a receiver supports acknowledgement, the sender receives a Fact of Death Acknowledgement Bundle carrying the same event code and referencing the notification through MessageHeader.response.identifier."/>
+    <supportedMessage>
+      <mode value="sender"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-notification"/>
+    </supportedMessage>
+    <supportedMessage>
+      <mode value="sender"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-correction"/>
+    </supportedMessage>
+    <supportedMessage>
+      <mode value="sender"/>
+      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-void"/>
+    </supportedMessage>
+  </messaging>
+</CapabilityStatement>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-source-organization"/>
+  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+  <name value="FODSourceOrganization"/>
+  <title value="Fact of Death Source Organization"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="The organization that registered the death and is the authoritative source of the notification, typically a jurisdictional Vital Records Office. Receivers use this to decide how much authority to give the notification, and to distinguish an authoritative registration from a report relayed by an intermediary."/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Organization"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier"/>
+      <short value="Identifier of the registering jurisdiction or office"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.active">
+      <path value="Organization.active"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type"/>
+      <short value="Kind of organization, normally a government office"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name"/>
+      <min value="1"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom"/>
+      <short value="Contact point a receiver can use to question or reconcile a notification"/>
+      <mustSupport value="true"/>
+    </element>
+    <element id="Organization.address">
+      <path value="Organization.address"/>
+      <mustSupport value="true"/>
+    </element>
+  </differential>
+</StructureDefinition>

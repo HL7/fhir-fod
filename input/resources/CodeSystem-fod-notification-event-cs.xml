@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-notification-event-cs"/>
+  <url value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+  <name value="FODNotificationEventCS"/>
+  <title value="Fact of Death Notification Event Codes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-07"/>
+  <publisher value="HL7 International - Public Health Work Group"/>
+  <description value="Event codes carried in MessageHeader.event to distinguish an initial fact-of-death notification from a later correction or retraction of that notification. Receivers use the event code to decide whether to record, amend, or reverse a previously recorded death."/>
+  <caseSensitive value="true"/>
+  <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="fact-of-death-notification"/>
+    <display value="Fact of Death Notification"/>
+    <definition value="An initial notification that a registered death event has occurred for the identified decedent."/>
+  </concept>
+  <concept>
+    <code value="fact-of-death-correction"/>
+    <display value="Fact of Death Correction"/>
+    <definition value="A notification that corrects content previously conveyed for the same death record, for example a revised date or place of death, or corrected decedent demographics. The death itself is still asserted to have occurred."/>
+  </concept>
+  <concept>
+    <code value="fact-of-death-void"/>
+    <display value="Fact of Death Void"/>
+    <definition value="A notification that retracts a previously sent fact-of-death notification, for example because the death record was voided or was registered against the wrong individual. The receiver is expected to reverse any death recorded on the basis of the retracted notification."/>
+  </concept>
+</CodeSystem>

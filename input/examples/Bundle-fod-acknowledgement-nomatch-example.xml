@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A receiver reports that a notification reached it cleanly but matched no patient record.
+     Note that the acknowledgement carries no decedent content back to the jurisdiction. -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="fod-acknowledgement-nomatch-example"/>
+  <meta>
+    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
+  </meta>
+  <identifier>
+    <system value="https://ehr.example.org/fod-acknowledgement"/>
+    <value value="ACK-2026-08-05-00317"/>
+  </identifier>
+  <type value="message"/>
+  <timestamp value="2026-08-05T09:12:44-05:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:90817263-5445-4a3b-8c2d-1e0f9a8b7c6d"/>
+    <resource>
+      <MessageHeader>
+        <id value="ACK-2026-08-05-00317"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
+        </meta>
+        <eventCoding>
+          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <code value="fact-of-death-notification"/>
+        </eventCoding>
+        <source>
+          <name value="Example Health System"/>
+          <endpoint value="https://ehr.example.org/fhir"/>
+        </source>
+        <response>
+          <identifier value="IL-FOD-2026-0000184"/>
+          <code value="ok"/>
+          <details>
+            <reference value="urn:uuid:81726354-4534-4b2c-9d1e-0f9a8b7c6d5e"/>
+          </details>
+        </response>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:81726354-4534-4b2c-9d1e-0f9a8b7c6d5e"/>
+    <resource>
+      <OperationOutcome>
+        <id value="fod-match-outcome-nomatch-example"/>
+        <meta>
+          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+        </meta>
+        <issue>
+          <severity value="warning"/>
+          <code value="not-found"/>
+          <details>
+            <coding>
+              <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
+              <code value="no-match"/>
+              <display value="No Match"/>
+            </coding>
+            <text value="No patient record matched the demographics in the notification. No record was updated."/>
+          </details>
+        </issue>
+      </OperationOutcome>
+    </resource>
+  </entry>
+</Bundle>
