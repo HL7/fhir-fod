@@ -1,7 +1,7 @@
 {
   "resourceType" : "ActorDefinition",
   "id" : "fod-notification-intermediary",
-  "url" : "http://somewhere.org/fhir/us/fod/ActorDefinition/fod-notification-intermediary",
+  "url" : "http://example.org/fhir/us/fod/ActorDefinition/fod-notification-intermediary",
   "name" : "FODNotificationIntermediary",
   "title" : "Notification Intermediary",
   "status" : "draft",

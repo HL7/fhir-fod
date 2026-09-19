@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-notification-event-cs"/>
-  <url value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+  <url value="http://example.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
   <name value="FODNotificationEventCS"/>
   <title value="Fact of Death Notification Event Codes"/>
   <status value="draft"/>
@@ -10,7 +10,7 @@
   <publisher value="HL7 International - Public Health Work Group"/>
   <description value="Event codes carried in MessageHeader.event to distinguish an initial fact-of-death notification from a later correction or retraction of that notification. Receivers use the event code to decide whether to record, amend, or reverse a previously recorded death."/>
   <caseSensitive value="true"/>
-  <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
+  <valueSet value="http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
   <content value="complete"/>
   <count value="3"/>
   <concept>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-acknowledgement-bundle"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
   <name value="FODAcknowledgementBundle"/>
   <title value="Fact of Death Acknowledgement Bundle"/>
   <status value="draft"/>
@@ -65,7 +65,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="MessageHeader"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
       </type>
     </element>
     <element id="Bundle.entry:MatchOutcome">
@@ -79,7 +79,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="OperationOutcome"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
       </type>
     </element>
   </differential>

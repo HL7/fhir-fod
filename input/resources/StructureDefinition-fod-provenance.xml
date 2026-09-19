@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-provenance"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
   <name value="FODProvenance"/>
   <title value="Fact of Death Provenance"/>
   <status value="draft"/>
@@ -21,7 +21,7 @@
       <short value="The fact of death being attributed, that is the Death Date observation"/>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+        <targetProfile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
       </type>
       <mustSupport value="true"/>
     </element>
@@ -70,7 +70,7 @@
       <path value="Provenance.agent.who"/>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+        <targetProfile value="http://example.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
       </type>
       <mustSupport value="true"/>
     </element>

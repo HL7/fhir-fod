@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-message-header"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
   <name value="FODMessageHeader"/>
   <title value="Fact of Death Message Header"/>
   <status value="draft"/>
@@ -24,7 +24,7 @@
       </type>
       <binding>
         <strength value="required"/>
-        <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
+        <valueSet value="http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
       </binding>
       <mustSupport value="true"/>
     </element>
@@ -68,7 +68,7 @@
       <max value="1"/>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+        <targetProfile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
       </type>
       <mustSupport value="true"/>
     </element>

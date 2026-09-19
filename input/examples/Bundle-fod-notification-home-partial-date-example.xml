@@ -5,7 +5,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-notification-home-partial-date-example"/>
   <meta>
-    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+    <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
   </meta>
   <identifier>
     <extension url="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber">
@@ -22,10 +22,10 @@
       <MessageHeader>
         <id value="IL-FOD-2026-0002911"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
         </meta>
         <eventCoding>
-          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <system value="http://example.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
           <code value="fact-of-death-notification"/>
         </eventCoding>
         <destination>
@@ -52,7 +52,7 @@
       <Patient>
         <id value="fod-decedent-home-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
         </meta>
         <identifier>
           <system value="http://vitalrecords.example.gov/death-record-id"/>
@@ -83,7 +83,7 @@
       <Observation>
         <id value="fod-death-date-home-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
         </meta>
         <extension url="http://hl7.org/fhir/StructureDefinition/event-location">
           <valueReference>
@@ -159,7 +159,7 @@
       <Location>
         <id value="fod-death-location-home-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
         </meta>
         <name value="Decedent's residence"/>
         <type>
@@ -184,7 +184,7 @@
       <Organization>
         <id value="fod-source-organization-home-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
         </meta>
         <identifier>
           <system value="http://vitalrecords.example.gov/jurisdiction-id"/>
@@ -212,7 +212,7 @@
       <Provenance>
         <id value="fod-provenance-home-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
         </meta>
         <target>
           <reference value="urn:uuid:c2d3e4f5-0617-4829-9a3b-4c5d6e7f8091"/>

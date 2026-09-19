@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-notification-event-vs"/>
-  <url value="http://somewhere.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
+  <url value="http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs"/>
   <name value="FODNotificationEventVS"/>
   <title value="Fact of Death Notification Event Value Set"/>
   <status value="draft"/>
@@ -11,7 +11,7 @@
   <description value="The set of message event codes used by fact-of-death notification messages."/>
   <compose>
     <include>
-      <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+      <system value="http://example.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
     </include>
   </compose>
 </ValueSet>

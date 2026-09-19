@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-notification-bundle"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
   <name value="FODNotificationBundle"/>
   <title value="Fact of Death Notification Bundle"/>
   <status value="draft"/>
@@ -23,7 +23,7 @@
         <severity value="error"/>
         <human value="A notification SHALL have a bundle identifier with both a system and a value, so that a later correction or retraction can unambiguously reference it."/>
         <expression value="identifier.system.exists() and identifier.value.exists()"/>
-        <source value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+        <source value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
       </constraint>
     </element>
     <element id="Bundle.identifier">
@@ -121,7 +121,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="MessageHeader"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
       </type>
     </element>
     <element id="Bundle.entry:Decedent">
@@ -135,7 +135,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Patient"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
       </type>
     </element>
     <element id="Bundle.entry:DeathDate">
@@ -149,7 +149,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Observation"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
       </type>
     </element>
     <element id="Bundle.entry:DeathLocation">
@@ -163,7 +163,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Location"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
       </type>
     </element>
     <element id="Bundle.entry:SourceOrganization">
@@ -177,7 +177,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Organization"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
       </type>
     </element>
     <element id="Bundle.entry:Provenance">
@@ -192,7 +192,7 @@
       <path value="Bundle.entry.resource"/>
       <type>
         <code value="Provenance"/>
-        <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+        <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
       </type>
     </element>
     <element id="Bundle.entry:Certifier">

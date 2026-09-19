@@ -3,7 +3,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-notification-hospital-example"/>
   <meta>
-    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+    <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
   </meta>
   <identifier>
     <extension url="http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber">
@@ -20,10 +20,10 @@
       <MessageHeader>
         <id value="IL-FOD-2026-0000184"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-message-header"/>
         </meta>
         <eventCoding>
-          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <system value="http://example.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
           <code value="fact-of-death-notification"/>
         </eventCoding>
         <destination>
@@ -53,7 +53,7 @@
       <Patient>
         <id value="fod-decedent-hospital-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
         </meta>
         <identifier>
           <type>
@@ -101,7 +101,7 @@
       <Observation>
         <id value="fod-death-date-hospital-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-date"/>
         </meta>
         <extension url="http://hl7.org/fhir/StructureDefinition/event-location">
           <valueReference>
@@ -162,7 +162,7 @@
       <Location>
         <id value="fod-death-location-hospital-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-death-location"/>
         </meta>
         <name value="Springfield General Hospital"/>
         <type>
@@ -188,7 +188,7 @@
       <Organization>
         <id value="fod-source-organization-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-source-organization"/>
         </meta>
         <identifier>
           <system value="http://vitalrecords.example.gov/jurisdiction-id"/>
@@ -223,7 +223,7 @@
       <Provenance>
         <id value="fod-provenance-hospital-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-provenance"/>
         </meta>
         <target>
           <reference value="urn:uuid:2b3c4d5e-6f70-4812-9345-6a7b8c9d0e1f"/>

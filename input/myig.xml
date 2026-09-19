@@ -8,7 +8,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/> 
   </extension>
-  <url value="http://somewhere.org/fhir/us/fod/ImplementationGuide/example.fhir.us.fod"/>
+  <url value="http://example.org/fhir/us/fod/ImplementationGuide/example.fhir.us.fod"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.2.0"/>
   <name value="FactOfDeathExchange"/>
@@ -66,36 +66,36 @@
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
-        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
+        <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
       </extension>
       <reference>
         <reference value="Bundle/fod-notification-hospital-example"/>
       </reference>
       <name value="Notification - hospital inpatient death"/>
       <description value="A death registered in a hospital, with full matching demographics and an exact date and time of death."/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+      <exampleCanonical value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
-        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
+        <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
       </extension>
       <reference>
         <reference value="Bundle/fod-notification-home-partial-date-example"/>
       </reference>
       <name value="Notification - death at home, partial date"/>
       <description value="A death at home where only the month and year are known, and where the decedent has no Social Security Number on the record."/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+      <exampleCanonical value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
-        <valueCanonical value="http://somewhere.org/fhir/us/fod/ActorDefinition/fod-notification-receiver"/>
+        <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-notification-receiver"/>
       </extension>
       <reference>
         <reference value="Bundle/fod-acknowledgement-nomatch-example"/>
       </reference>
       <name value="Acknowledgement - no match found"/>
       <description value="A receiver reporting that a notification arrived cleanly but matched no patient record."/>
-      <exampleCanonical value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
+      <exampleCanonical value="http://example.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
     </resource>
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-match-outcome"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
   <name value="FODMatchOutcome"/>
   <title value="Fact of Death Match Outcome"/>
   <status value="draft"/>
@@ -38,7 +38,7 @@
       <min value="1"/>
       <binding>
         <strength value="required"/>
-        <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
+        <valueSet value="http://example.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
       </binding>
       <mustSupport value="true"/>
     </element>

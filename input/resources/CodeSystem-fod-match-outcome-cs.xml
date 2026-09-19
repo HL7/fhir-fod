@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-match-outcome-cs"/>
-  <url value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
+  <url value="http://example.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
   <name value="FODMatchOutcomeCS"/>
   <title value="Fact of Death Match Outcome Codes"/>
   <status value="draft"/>
@@ -10,7 +10,7 @@
   <publisher value="HL7 International - Public Health Work Group"/>
   <description value="Codes a receiving system returns to report whether a fact-of-death notification could be matched to a patient record. These codes describe the outcome of the receiver's own matching process; this guide does not specify the matching algorithm itself."/>
   <caseSensitive value="true"/>
-  <valueSet value="http://somewhere.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
+  <valueSet value="http://example.org/fhir/us/fod/ValueSet/fod-match-outcome-vs"/>
   <content value="complete"/>
   <count value="4"/>
   <concept>
