@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-decedent"/>
-  <url value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+  <url value="http://example.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
   <name value="FODDecedent"/>
   <title value="Fact of Death Decedent"/>
   <status value="draft"/>
@@ -23,7 +23,7 @@
         <severity value="error"/>
         <human value="A decedent SHALL carry either a Social Security Number, or a birth date together with an address or a telecom, so that a receiving system has enough demographic breadth to match safely."/>
         <expression value="identifier.where(type.coding.where(system = 'http://terminology.hl7.org/CodeSystem/v2-0203' and code = 'SS').exists()).exists() or (birthDate.exists() and (address.exists() or telecom.exists()))"/>
-        <source value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
+        <source value="http://example.org/fhir/us/fod/StructureDefinition/fod-decedent"/>
       </constraint>
     </element>
     <element id="Patient.extension:NVSS-SexAtDeath">

@@ -4,7 +4,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-acknowledgement-nomatch-example"/>
   <meta>
-    <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
+    <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-bundle"/>
   </meta>
   <identifier>
     <system value="https://ehr.example.org/fod-acknowledgement"/>
@@ -18,10 +18,10 @@
       <MessageHeader>
         <id value="ACK-2026-08-05-00317"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-acknowledgement-message-header"/>
         </meta>
         <eventCoding>
-          <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
+          <system value="http://example.org/fhir/us/fod/CodeSystem/fod-notification-event-cs"/>
           <code value="fact-of-death-notification"/>
         </eventCoding>
         <source>
@@ -44,14 +44,14 @@
       <OperationOutcome>
         <id value="fod-match-outcome-nomatch-example"/>
         <meta>
-          <profile value="http://somewhere.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
+          <profile value="http://example.org/fhir/us/fod/StructureDefinition/fod-match-outcome"/>
         </meta>
         <issue>
           <severity value="warning"/>
           <code value="not-found"/>
           <details>
             <coding>
-              <system value="http://somewhere.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
+              <system value="http://example.org/fhir/us/fod/CodeSystem/fod-match-outcome-cs"/>
               <code value="no-match"/>
               <display value="No Match"/>
             </coding>

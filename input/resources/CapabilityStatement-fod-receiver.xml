@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-receiver"/>
-  <url value="http://somewhere.org/fhir/us/fod/CapabilityStatement/fod-receiver"/>
+  <url value="http://example.org/fhir/us/fod/CapabilityStatement/fod-receiver"/>
   <name value="FODReceiver"/>
   <title value="Fact of Death Receiver Capability Statement"/>
   <status value="draft"/>
@@ -25,15 +25,15 @@
     <documentation value="A receiver matches each notification to a patient record using its own matching logic. Where it supports acknowledgement, it reports the outcome using the Fact of Death Match Outcome, including the case where no patient record matched."/>
     <supportedMessage>
       <mode value="receiver"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-notification"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-notification"/>
     </supportedMessage>
     <supportedMessage>
       <mode value="receiver"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-correction"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-correction"/>
     </supportedMessage>
     <supportedMessage>
       <mode value="receiver"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-void"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-void"/>
     </supportedMessage>
   </messaging>
 </CapabilityStatement>

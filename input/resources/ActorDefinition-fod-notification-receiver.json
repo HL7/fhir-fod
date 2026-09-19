@@ -1,7 +1,7 @@
 {
   "resourceType" : "ActorDefinition",
   "id" : "fod-notification-receiver",
-  "url" : "http://somewhere.org/fhir/us/fod/ActorDefinition/fod-notification-receiver",
+  "url" : "http://example.org/fhir/us/fod/ActorDefinition/fod-notification-receiver",
   "name" : "FODNotificationReceiver",
   "title" : "Notification Receiver",
   "status" : "draft",
@@ -10,5 +10,5 @@
   "publisher" : "HL7 International - Public Health Work Group",
   "description" : "A clinical system, typically an EHR, that accepts fact-of-death notifications and attempts to match each one to a patient record so that the death can be recorded and outreach discontinued. This actor owns the matching decision; this guide does not specify the algorithm it uses.",
   "type" : "system",
-  "capabilities" : "http://somewhere.org/fhir/us/fod/CapabilityStatement/fod-receiver"
+  "capabilities" : "http://example.org/fhir/us/fod/CapabilityStatement/fod-receiver"
 }

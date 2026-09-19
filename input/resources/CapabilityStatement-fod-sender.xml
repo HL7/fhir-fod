@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="fod-sender"/>
-  <url value="http://somewhere.org/fhir/us/fod/CapabilityStatement/fod-sender"/>
+  <url value="http://example.org/fhir/us/fod/CapabilityStatement/fod-sender"/>
   <name value="FODSender"/>
   <title value="Fact of Death Sender Capability Statement"/>
   <status value="draft"/>
@@ -17,15 +17,15 @@
     <documentation value="Notifications are sent as FHIR messages conforming to the Fact of Death Notification Bundle. Where a receiver supports acknowledgement, the sender receives a Fact of Death Acknowledgement Bundle carrying the same event code and referencing the notification through MessageHeader.response.identifier."/>
     <supportedMessage>
       <mode value="sender"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-notification"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-notification"/>
     </supportedMessage>
     <supportedMessage>
       <mode value="sender"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-correction"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-correction"/>
     </supportedMessage>
     <supportedMessage>
       <mode value="sender"/>
-      <definition value="http://somewhere.org/fhir/us/fod/MessageDefinition/fod-void"/>
+      <definition value="http://example.org/fhir/us/fod/MessageDefinition/fod-void"/>
     </supportedMessage>
   </messaging>
 </CapabilityStatement>
