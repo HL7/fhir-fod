@@ -1,0 +1,135 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "fod-void-example",
+  "meta" : {
+    "profile" : [
+      "http://example.org/fhir/us/fod/StructureDefinition/fod-void-bundle"
+    ]
+  },
+  "language" : "en",
+  "identifier" : {
+    "extension" : [
+      {
+        "url" : "http://hl7.org/fhir/us/vr-common-library/StructureDefinition/CertificateNumber",
+        "valueString" : "1742"
+      }
+    ],
+    "system" : "http://vitalrecords.example.gov/fod-voi",
+    "value" : "MI-FOD-2026-FHIRID"
+  },
+  "type" : "message",
+  "timestamp" : "2026-08-05T09:12:00-05:00",
+  "entry" : [
+    {
+      "fullUrl" : "urn:uuid:0f1e2d3c-4b5a-6978-8796-a5b4c3d2e1f0",
+      "resource" : {
+        "resourceType" : "MessageHeader",
+        "id" : "MI-FOD-2026-FHIRID",
+        "meta" : {
+          "profile" : [
+             "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header"
+          ]
+        },
+        "language" : "en",
+        "text" : {
+          "status" : "final"
+        },
+        "eventCoding" : {
+          "system" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs",
+          "code" : "fact-of-death-void"
+        },
+        "destination" : [
+          {
+            "name" : "Michigan Department of Health and Human Services",
+            "endpoint" : "https://ehr.example.org/fhir/$process-message",
+            "receiver" : {
+              "display" : "MiDHHS"
+            }
+          }
+        ],
+        "sender" : {
+          "reference" : "urn:uuid:5d4c3b2a-3817-4716-8524-3f2e1d0c9b8a",
+          "display" :  "Michigan Department of Health and Human Services"
+        },
+        "source" : {
+          "name" : "Michigan Vital Records Notification Service",
+          "endpoint" : "https://vitalrecords.example.gov/fod"
+        },
+        "focus" : [
+          {
+            "reference" : "urn:uuid:2b3c4d5e-6f70-4812-6249-6a7b8c9d0e1f"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:1a2b3c4d-5e6f-4708-RAN4NUM-a3b4c5d6e7f8",
+      "resource" : {
+        "resourceType" : "Patient",
+        "id" : "fod-decedent-hospital-example",
+        "meta" : {
+          "profile" : [
+            "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent"
+          ]
+        },
+        "language" : "en",
+        "text" : {
+          "status" : "final"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "SS"
+                }
+              ]
+            },
+            "system" : "http://hl7.org/fhir/sid/us-ssn",
+            "value" : "483729105"
+          }
+        ],
+        "name" : [
+          {
+            "use" : "official",
+            "family" : "Anderson",
+            "given" : [
+              "Emily",
+              "Rose"
+            ]
+          },
+          {
+            "use" : "maiden",
+            "family" : "Mitchell",
+            "given" : [
+              "Emily"
+            ]
+          }
+        ],
+        "telecom" : [
+          {
+            "system" : "phone",
+            "value" : "555-214-6387",
+            "use" : "home"
+          }
+        ],
+        "gender" : "female",
+        "birthDate" : "1997-09-23",
+        "deceasedBoolean" : false,
+        "address" : [
+          {
+            "line" : [
+              "123 Elm Street"
+            ],
+            "city" : "Port Huron",
+            "district" : "4",
+            "state" : "MI",
+            "postalCode" : "48060",
+            "country" : "US"
+          }
+        ]
+      }
+    }
+  ]
+}

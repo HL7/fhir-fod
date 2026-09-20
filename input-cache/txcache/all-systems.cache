@@ -410,3 +410,333 @@ v: {
 
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "US"
+  }]
+}, "url": "http://hl7.org/fhir/ValueSet/jurisdiction", "version": "4.0.1", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "United States of America",
+  "code" : "US",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Analysing http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Parameters: disp-lang=en-US, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Prepare include[0]: \"(urn:iso:std:iso:3166)\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: CodeSystem found: \"urn:iso:std:iso:3166|2018\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Prepare include[1]: \"(urn:iso:std:iso:3166:-2)\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: CodeSystem found: \"urn:iso:std:iso:3166:-2|2021\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Prepare include[2]: \"(http://unstats.un.org/unsd/methods/m49/m49.htm)(class=region)\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: CodeSystem found: \"http://unstats.un.org/unsd/methods/m49/m49.htm|null\"\n0ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Validate \"[urn:iso:std:iso:3166#US (\"undefined\")]\"\n1ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Check \"urn:iso:std:iso:3166#US\"\n1ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: CodeSystem found: urn:iso:std:iso:3166|2018 for urn:iso:std:iso:3166\n1ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: check code in (urn:iso:std:iso:3166) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1: Code \"US\" found in urn:iso:std:iso:3166|2018",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "urn:iso:std:iso:3166",
+    "code" : "US"
+  }]
+}, "url": "http://hl7.org/fhir/5.0/ValueSet/jurisdiction", "version": "5.0.0", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "United States of America",
+  "code" : "US",
+  "system" : "urn:iso:std:iso:3166",
+  "version" : "2018",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Analysing http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0 for validation purposes\n0ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Parameters: disp-lang=en-US, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n0ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Prepare include[0]: \"(urn:iso:std:iso:3166)\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: CodeSystem found: \"urn:iso:std:iso:3166|2018\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Prepare include[1]: \"(urn:iso:std:iso:3166:-2)\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: CodeSystem found: \"urn:iso:std:iso:3166:-2|2021\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Prepare include[2]: \"(http://unstats.un.org/unsd/methods/m49/m49.htm)(class=region)\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: CodeSystem found: \"http://unstats.un.org/unsd/methods/m49/m49.htm|null\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Validate \"[urn:iso:std:iso:3166#US (\"undefined\")]\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Check \"urn:iso:std:iso:3166#US\"\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: CodeSystem found: urn:iso:std:iso:3166|2018 for urn:iso:std:iso:3166\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: check code in (urn:iso:std:iso:3166) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0: Code \"US\" found in urn:iso:std:iso:3166|2018",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "MSG_DEPRECATED"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "information",
+    "code" : "business-rule",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "status-check"
+      }],
+      "text" : "Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0"
+    }
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "440081000124100",
+    "display" : "Death in home"
+  }]
+}, "url": "http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs", "version": "3.0.0", "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in home",
+  "code" : "440081000124100",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Analysing http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Parameters: disp-lang=en-US, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[0]: \"(http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100)\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[1]: \"(http://terminology.hl7.org/CodeSystem/v3-NullFlavor)(OTH,UNK)\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Validate \"[http://snomed.info/sct#440081000124100 (\"Death in home\")]\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Check \"http://snomed.info/sct#440081000124100\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: check code in (http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Code \"440081000124100\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "16983000",
+    "display" : "Death in hospital"
+  }]
+}, "url": "http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs", "version": "3.0.0", "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in hospital",
+  "code" : "16983000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Analysing http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0 for validation purposes\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Parameters: disp-lang=en-US, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[0]: \"(http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100)\"\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[1]: \"(http://terminology.hl7.org/CodeSystem/v3-NullFlavor)(OTH,UNK)\"\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0\"\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Validate \"[http://snomed.info/sct#16983000 (\"Death in hospital\")]\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Check \"http://snomed.info/sct#16983000\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: check code in (http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Code \"16983000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "en"
+}, "url": "http://hl7.org/fhir/ValueSet/languages", "version": "4.0.1", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"true", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "English",
+  "code" : "en",
+  "system" : "urn:ietf:bcp:47",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Analysing http://hl7.org/fhir/ValueSet/languages|4.0.1 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n0ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Prepare include[0]: \"(urn:ietf:bcp:47)(ar,bn,cs,da,de,de-AT,de-CH,de-DE,el,en,en-AU,en-CA,en-GB,en-IN,en-NZ,en-SG,en-US,es,es-AR,es-ES,es-UY,fi,fr,fr-BE,fr-CH,fr-FR,fy,fy-NL,hi,hr,it,it-CH,it-IT,ja,ko,nl,nl-BE,nl-NL,no,no-NO,pa,pl,pt,pt-BR,ru,ru-RU,sr,sr-RS,sv,sv-SE,te,zh,zh-CN,zh-HK,zh-SG,zh-TW)\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: CodeSystem found: \"urn:ietf:bcp:47|null\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Validate \"[undefined#en (\"undefined\")]\" and infer system\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Check \"undefined#en\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Inferred CodeSystem = \"urn:ietf:bcp:47\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: CodeSystem found: urn:ietf:bcp:47|null for urn:ietf:bcp:47\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: check code in (urn:ietf:bcp:47)(ar,bn,cs,da,de,de-AT,de-CH,de-DE,el,en,en-AU,en-CA,en-GB,en-IN,en-NZ,en-SG,en-US,es,es-AR,es-ES,es-UY,fi,fr,fr-BE,fr-CH,fr-FR,fy,fy-NL,hi,hr,it,it-CH,it-IT,ja,ko,nl,nl-BE,nl-NL,no,no-NO,pa,pl,pt,pt-BR,ru,ru-RU,sr,sr-RS,sv,sv-SE,te,zh,zh-CN,zh-HK,zh-SG,zh-TW) at \n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Code \"en\" found in urn:ietf:bcp:47|null",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs",
+  "code" : "fact-of-death-void"
+}, "url": "http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs", "version": "0.2.0", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "code" : "fact-of-death-void",
+  "system" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs",
+  "severity" : "error",
+  "error" : "A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs' could not be found, so the code cannot be validated; The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs#fact-of-death-void' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "Local Error: The local terminology server cannot handle this request. Server Error: A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs' could not be found, so the code cannot be validated; The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs#fact-of-death-void' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'",
+  "unknown-systems" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "UNKNOWN_CODESYSTEM"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "not-found",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-found"
+      }],
+      "text" : "A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs' could not be found, so the code cannot be validated"
+    },
+    "expression" : ["Coding.system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-d-event-cs#fact-of-death-void' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'"
+    },
+    "expression" : ["Coding.code"]
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs",
+  "code" : "fact-of-death-notification"
+}, "url": "http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs", "version": "0.2.0", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "code" : "fact-of-death-notification",
+  "system" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs",
+  "severity" : "error",
+  "error" : "A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs' could not be found, so the code cannot be validated; The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs#fact-of-death-notification' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'",
+  "class" : "UNKNOWN",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "Local Error: The local terminology server cannot handle this request. Server Error: A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs' could not be found, so the code cannot be validated; The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs#fact-of-death-notification' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'",
+  "unknown-systems" : "http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs",
+  "issues" : {
+  "resourceType" : "OperationOutcome",
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "UNKNOWN_CODESYSTEM"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "not-found",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-found"
+      }],
+      "text" : "A definition for CodeSystem 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs' could not be found, so the code cannot be validated"
+    },
+    "expression" : ["Coding.system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueString" : "None_of_the_provided_codes_are_in_the_value_set_one"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-server",
+      "valueUrl" : "https://tx.fhir.org/r4"
+    }],
+    "severity" : "error",
+    "code" : "code-invalid",
+    "details" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type",
+        "code" : "not-in-vs"
+      }],
+      "text" : "The provided code 'http://somewhere.org/fhir/us/fod/CodeSystem/fod-notification-event-cs#fact-of-death-notification' was not found in the value set 'http://example.org/fhir/us/fod/ValueSet/fod-notification-event-vs|0.2.0'"
+    },
+    "expression" : ["Coding.code"]
+  }]
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "16983000",
+    "display" : "Death in hospital"
+  }]
+}, "url": "http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs", "version": "3.0.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in hospital",
+  "code" : "16983000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Analysing http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0 for validation purposes\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Version Rules: default:http://snomed.info/sct#http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[0]: \"(http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100)\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Prepare include[1]: \"(http://terminology.hl7.org/CodeSystem/v3-NullFlavor)(OTH,UNK)\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: \"http://terminology.hl7.org/CodeSystem/v3-NullFlavor|4.0.0\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Validate \"[http://snomed.info/sct#16983000 (\"Death in hospital\")]\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Check \"http://snomed.info/sct#16983000\"\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: check code in (http://snomed.info/sct)(63238001,440081000124100,440071000124103,16983000,450391000124102,450381000124100) at CodeableConcept.coding[0]\n1ms http://hl7.org/fhir/us/vrdr/ValueSet/vrdr-place-of-death-vs|3.0.0: Code \"16983000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
