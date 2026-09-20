@@ -1,0 +1,10 @@
+{
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-source-organization" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-void-bundle" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-date" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-death-location" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-decedent" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-message-header" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-notification-bundle" : null,
+  "http://somewhere.org/fhir/us/fod/StructureDefinition/fod-provenance" : null
+}

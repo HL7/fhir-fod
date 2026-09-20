@@ -88,6 +88,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
+        <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/fod-void-example"/>
+      </reference>
+      <name value="Void"/>
+      <description value="A sender reporting that a previously sent death should be voided."/>
+      <exampleCanonical value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
+        <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-death-record-source"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/fod-correction-example"/>
+      </reference>
+      <name value="Correction"/>
+      <description value="A sender correcting information in a previously sent death."/>
+      <exampleCanonical value="http://example.org/fhir/us/fod/StructureDefinition/fod-notification-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor">
         <valueCanonical value="http://example.org/fhir/us/fod/ActorDefinition/fod-notification-receiver"/>
       </extension>
       <reference>

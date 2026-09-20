@@ -2,11 +2,11 @@
   "resourceType" : "TerminologyCapabilities",
   "id" : "FhirServer",
   "url" : "http://tx.fhir.org/r4/TerminologyCapabilities/tx",
-  "version" : "0.11.1",
+  "version" : "0.13.4",
   "name" : "FHIRTerminologyServer",
   "title" : "FHIR Terminology Server",
   "status" : "active",
-  "date" : "2026-08-07T21:42:38.474Z",
+  "date" : "2026-09-20T13:42:35.005Z",
   "contact" : [{
     "telecom" : [{
       "system" : "other",
@@ -2973,9 +2973,39 @@
       "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
       "valueCode" : "complete"
     }],
+    "uri" : "http://id.who.int/icd/entity",
+    "version" : [{
+      "code" : "2026-01"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "complete"
+    }],
+    "uri" : "http://id.who.int/icd/release/11/icf",
+    "version" : [{
+      "code" : "2026-01"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "complete"
+    }],
+    "uri" : "http://id.who.int/icd/release/11/mms",
+    "version" : [{
+      "code" : "2026-01"
+    }]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-TerminologyCapabilities.codeSystem.content",
+      "valueCode" : "complete"
+    }],
     "uri" : "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
     "version" : [{
-      "code" : "1.5.0"
+      "code" : "1.6.0"
     }]
   },
   {
@@ -15082,7 +15112,7 @@
     }],
     "uri" : "https://fevir.net/sevco",
     "version" : [{
-      "code" : "2.0"
+      "code" : "3.0"
     }]
   },
   {
@@ -15102,7 +15132,7 @@
     }],
     "uri" : "https://terminology.dhp.uz/fhir/CodeSystem/loinc-supplement-uz",
     "version" : [{
-      "code" : "2.80"
+      "code" : "2.82"
     }]
   },
   {
@@ -15298,10 +15328,19 @@
       "name" : "check-system-version"
     },
     {
+      "name" : "check-valueset-version"
+    },
+    {
       "name" : "count"
     },
     {
       "name" : "default-to-latest-version"
+    },
+    {
+      "name" : "default-valueset-version"
+    },
+    {
+      "name" : "designation"
     },
     {
       "name" : "displayLanguage"
@@ -15316,7 +15355,13 @@
       "name" : "excludePostCoordinated"
     },
     {
+      "name" : "filter"
+    },
+    {
       "name" : "force-system-version"
+    },
+    {
+      "name" : "force-valueset-version"
     },
     {
       "name" : "inactive"
@@ -15332,6 +15377,10 @@
     },
     {
       "name" : "incomplete-ok"
+    },
+    {
+      "name" : "limit",
+      "documentation" : "Upper bound on the size of the expansion; the operation fails as too-costly beyond it"
     },
     {
       "name" : "limitedExpansion"
@@ -15353,11 +15402,27 @@
       "name" : "property"
     },
     {
+      "name" : "sort",
+      "documentation" : "code | display | design | prop:{name}; prefix with - to reverse. Ignored for hierarchical expansions"
+    },
+    {
       "name" : "system-version"
+    },
+    {
+      "name" : "url"
+    },
+    {
+      "name" : "useSupplement"
+    },
+    {
+      "name" : "valueSet"
     },
     {
       "name" : "valueSetMode",
       "documentation" : "= CHECK_MEMBERSHIP_ONLY | NO_MEMBERSHIP_CHECK"
+    },
+    {
+      "name" : "valueSetVersion"
     }]
   },
   "validateCode" : {

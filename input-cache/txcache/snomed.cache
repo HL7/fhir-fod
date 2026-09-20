@@ -59,3 +59,93 @@ v: {
 
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "440081000124100",
+    "display" : "Death in home"
+  }]
+}, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in home",
+  "code" : "440081000124100",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#440081000124100 (\"Death in home\")]\"\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#440081000124100\"\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"440081000124100\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "16983000",
+    "display" : "Death in hospital"
+  }]
+}, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in hospital",
+  "code" : "16983000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#16983000 (\"Death in hospital\")]\"\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#16983000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"16983000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://snomed.info/sct",
+    "code" : "16983000",
+    "display" : "Death in hospital"
+  }]
+}, "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Death in hospital",
+  "code" : "16983000",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/731000124108/version/20250901",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n0ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Validate \"[http://snomed.info/sct#16983000 (\"Death in hospital\")]\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Check \"http://snomed.info/sct#16983000\"\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901 for http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: check code in (http://snomed.info/sct) at CodeableConcept.coding[0]\n1ms http://snomed.info/sct/vs|http://snomed.info/sct/731000124108/version/20250901: Code \"16983000\" found in http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20250901",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
